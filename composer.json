@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^7.0",
-    "api-clients/middleware": "^1.0",
+    "api-clients/middleware": "^2.0",
     "clue/buzz-react": "^1.1"
   },
   "require-dev": {
