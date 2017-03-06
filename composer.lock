@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d852901e00112201cdea506cb9b59c97",
+    "content-hash": "c732cd95b954c9e227ba017be6ea48c9",
     "packages": [
         {
             "name": "api-clients/middleware",
@@ -55,6 +55,48 @@
             ],
             "description": "Request middleware",
             "time": "2017-03-04T11:38:16+00:00"
+        },
+        {
+            "name": "api-clients/psr7-http-status-exceptions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-api-clients/psr7-http-status-exceptions.git",
+                "reference": "dd4d77871b3e141c4328ce729ed4e2a9bf113df2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-api-clients/psr7-http-status-exceptions/zipball/dd4d77871b3e141c4328ce729ed4e2a9bf113df2",
+                "reference": "dd4d77871b3e141c4328ce729ed4e2a9bf113df2",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/middleware": "^2.0",
+                "php": "^7.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^3.0.1",
+                "ringcentral/psr7": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApiClients\\Tools\\Psr7\\HttpStatusExceptions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "PSR-7 Response wrapping exceptions",
+            "time": "2017-03-06 21:20:52"
         },
         {
             "name": "clue/buzz-react",
@@ -2328,7 +2370,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "api-clients/psr7-http-status-exceptions": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
