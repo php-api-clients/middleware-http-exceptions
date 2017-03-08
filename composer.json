@@ -11,7 +11,7 @@
   "require": {
     "php": "^7.0",
     "api-clients/middleware": "^2.0",
-    "api-clients/psr7-http-status-exceptions": "dev-master",
+    "api-clients/psr7-http-status-exceptions": "^1.0",
     "clue/buzz-react": "^1.1"
   },
   "require-dev": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c732cd95b954c9e227ba017be6ea48c9",
+    "content-hash": "e9710decd207d3bb47d96240a2fbceb2",
     "packages": [
         {
             "name": "api-clients/middleware",
@@ -58,20 +58,19 @@
         },
         {
             "name": "api-clients/psr7-http-status-exceptions",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/psr7-http-status-exceptions.git",
-                "reference": "dd4d77871b3e141c4328ce729ed4e2a9bf113df2"
+                "reference": "843b2a3240c01a35f12863f954ab4f9590f1738e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/psr7-http-status-exceptions/zipball/dd4d77871b3e141c4328ce729ed4e2a9bf113df2",
-                "reference": "dd4d77871b3e141c4328ce729ed4e2a9bf113df2",
+                "url": "https://api.github.com/repos/php-api-clients/psr7-http-status-exceptions/zipball/843b2a3240c01a35f12863f954ab4f9590f1738e",
+                "reference": "843b2a3240c01a35f12863f954ab4f9590f1738e",
                 "shasum": ""
             },
             "require": {
-                "api-clients/middleware": "^2.0",
                 "php": "^7.0",
                 "psr/http-message": "^1.0"
             },
@@ -96,7 +95,7 @@
                 }
             ],
             "description": "PSR-7 Response wrapping exceptions",
-            "time": "2017-03-06 21:20:52"
+            "time": "2017-03-08T06:57:57+00:00"
         },
         {
             "name": "clue/buzz-react",
@@ -1338,16 +1337,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "5.0.2",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "531553c4795a1df54114342d68ca337d5d81c8a0"
+                "reference": "4e99e1c4f9b05cbf4d6e84b100b3ff4107cf8cd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/531553c4795a1df54114342d68ca337d5d81c8a0",
-                "reference": "531553c4795a1df54114342d68ca337d5d81c8a0",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/4e99e1c4f9b05cbf4d6e84b100b3ff4107cf8cd1",
+                "reference": "4e99e1c4f9b05cbf4d6e84b100b3ff4107cf8cd1",
                 "shasum": ""
             },
             "require": {
@@ -1397,7 +1396,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-01T09:14:18+00:00"
+            "time": "2017-03-06T14:22:16+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2370,9 +2369,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "api-clients/psr7-http-status-exceptions": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
