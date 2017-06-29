@@ -2,10 +2,10 @@
 
 namespace ApiClients\Middleware\HttpExceptions;
 
+use ApiClients\Foundation\Middleware\Annotation\SecondLast;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
 use ApiClients\Foundation\Middleware\PreTrait;
-use ApiClients\Foundation\Middleware\Priority;
 use ApiClients\Tools\Psr7\HttpStatusExceptions\ExceptionFactory;
 use Clue\React\Buzz\Message\ResponseException;
 use React\Promise\CancellablePromiseInterface;
@@ -18,23 +18,20 @@ final class HttpExceptionsMiddleware implements MiddlewareInterface
     use PostTrait;
 
     /**
-     * @return int
-     */
-    public function priority(): int
-    {
-        return Priority::SECOND_LAST;
-    }
-
-    /**
      * When $throwable is a ResponseException this method will turn it into a
      * HTTP status code specific exception.
      *
      * @param Throwable $throwable
      * @param array $options
      * @return CancellablePromiseInterface
+     *
+     * @SecondLast()
      */
-    public function error(Throwable $throwable, array $options = []): CancellablePromiseInterface
-    {
+    public function error(
+        Throwable $throwable,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         if (!($throwable instanceof ResponseException)) {
             return reject($throwable);
         }

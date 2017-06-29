@@ -2,7 +2,6 @@
 
 namespace ApiClients\Tests\Middleware\HttpExceptions;
 
-use ApiClients\Foundation\Middleware\Priority;
 use ApiClients\Middleware\HttpExceptions\HttpExceptionsMiddleware;
 use ApiClients\Tools\Psr7\HttpStatusExceptions\ExceptionFactory;
 use ApiClients\Tools\TestUtilities\TestCase;
@@ -12,21 +11,9 @@ use React\EventLoop\Factory;
 use RingCentral\Psr7\Response;
 use Throwable;
 use function Clue\React\Block\await;
-use function React\Promise\reject;
 
 final class HttpExceptionsMiddlewareTest extends TestCase
 {
-    /**
-     * Ensure we run second last so the last can be logging or so that stores information.
-     */
-    public function testPriority()
-    {
-        self::assertSame(
-            Priority::SECOND_LAST,
-            (new HttpExceptionsMiddleware())->priority()
-        );
-    }
-
     public function provideThrowables()
     {
         yield [
@@ -55,7 +42,7 @@ final class HttpExceptionsMiddlewareTest extends TestCase
 
         try {
             await(
-                (new HttpExceptionsMiddleware())->error($input, []),
+                (new HttpExceptionsMiddleware())->error($input, 'abc', []),
                 Factory::create()
             );
         } catch (Throwable $result) {
