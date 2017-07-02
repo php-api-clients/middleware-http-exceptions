@@ -4,38 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9710decd207d3bb47d96240a2fbceb2",
+    "content-hash": "573331f66e2120749406c7baef9d8610",
     "packages": [
         {
             "name": "api-clients/middleware",
-            "version": "2.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-api-clients/middleware.git",
-                "reference": "3dbb05edfd01086368536ae176d444edf8093356"
+                "reference": "328f8e17bbf5a51107de0d1b5987c04757f66499"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-api-clients/middleware/zipball/3dbb05edfd01086368536ae176d444edf8093356",
-                "reference": "3dbb05edfd01086368536ae176d444edf8093356",
+                "url": "https://api.github.com/repos/php-api-clients/middleware/zipball/328f8e17bbf5a51107de0d1b5987c04757f66499",
+                "reference": "328f8e17bbf5a51107de0d1b5987c04757f66499",
                 "shasum": ""
             },
             "require": {
+                "doctrine/annotations": "^1.4",
                 "php": "^7.0",
                 "psr/http-message": "^1.0",
-                "react/promise": "^2.4"
+                "react/promise": "^2.4",
+                "wyrihaximus/doctrine-annotation-autoloader": "^1.0"
             },
             "require-dev": {
-                "api-clients/test-utilities": "^3.0",
-                "container-interop/container-interop": "^1.1",
-                "guzzlehttp/psr7": "^1.3"
+                "api-clients/test-utilities": "^4.1",
+                "guzzlehttp/psr7": "^1.3",
+                "psr/container": "^1.0"
             },
             "suggest": {
                 "api-clients/middleware-cache": "Cache requests with different strategies",
                 "api-clients/middleware-log": "Log requests and their context",
                 "api-clients/middleware-oauth1": "Sign requests with oauth1",
                 "api-clients/middleware-pool": "Pool the maximum concurrent requests",
-                "container-interop/container-interop": "Add a ContainerInterface implementation to use the ContainerLocator"
+                "psr/container": "Add a ContainerInterface implementation to use the ContainerLocator"
             },
             "type": "library",
             "autoload": {
@@ -54,7 +56,7 @@
                 }
             ],
             "description": "Request middleware",
-            "time": "2017-03-04T11:38:16+00:00"
+            "time": "2017-06-28T19:24:19+00:00"
         },
         {
             "name": "api-clients/psr7-http-status-exceptions",
@@ -151,6 +153,128 @@
                 "reactphp"
             ],
             "time": "2016-10-21T10:29:37+00:00"
+        },
+        {
+            "name": "doctrine/annotations",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/annotations.git",
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/lexer": "1.*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "doctrine/cache": "1.*",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Docblock Annotations Parser",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "annotations",
+                "docblock",
+                "parser"
+            ],
+            "time": "2017-02-24T16:22:25+00:00"
+        },
+        {
+            "name": "doctrine/lexer",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/lexer.git",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Lexer\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "lexer",
+                "parser"
+            ],
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -746,6 +870,42 @@
                 "uri"
             ],
             "time": "2016-03-25T17:36:49+00:00"
+        },
+        {
+            "name": "wyrihaximus/doctrine-annotation-autoloader",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-doctrine-annotation-autoloader.git",
+                "reference": "9670f84b7d3ca53723556988080ebc939da345af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-doctrine-annotation-autoloader/zipball/9670f84b7d3ca53723556988080ebc939da345af",
+                "reference": "9670f84b7d3ca53723556988080ebc939da345af",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Request middleware",
+            "time": "2017-06-19T15:02:15+00:00"
         }
     ],
     "packages-dev": [
