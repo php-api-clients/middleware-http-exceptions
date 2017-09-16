@@ -12,7 +12,7 @@
     "php": "^7.0",
     "api-clients/middleware": "^4.0",
     "api-clients/psr7-http-status-exceptions": "^1.0",
-    "clue/buzz-react": "^1.1"
+    "clue/buzz-react": "^2.0 || ^1.1"
   },
   "require-dev": {
     "api-clients/test-utilities": "^3.0.1"
