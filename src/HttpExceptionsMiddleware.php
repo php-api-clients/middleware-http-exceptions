@@ -2,7 +2,7 @@
 
 namespace ApiClients\Middleware\HttpExceptions;
 
-use ApiClients\Foundation\Middleware\Annotation\SecondLast;
+use ApiClients\Foundation\Middleware\Annotation\ThirdLast;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
 use ApiClients\Foundation\Middleware\PreTrait;
@@ -25,7 +25,7 @@ final class HttpExceptionsMiddleware implements MiddlewareInterface
      * @param array $options
      * @return CancellablePromiseInterface
      *
-     * @SecondLast()
+     * @ThirdLast()
      */
     public function error(
         Throwable $throwable,
