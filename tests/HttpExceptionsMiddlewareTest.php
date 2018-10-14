@@ -28,7 +28,7 @@ final class HttpExceptionsMiddlewareTest extends TestCase
             );
             yield [
                 $responseException,
-                $exception::create($response, $responseException)
+                $exception::create($response, $responseException),
             ];
         }
     }

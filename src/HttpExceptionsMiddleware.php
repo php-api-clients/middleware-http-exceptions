@@ -21,8 +21,8 @@ final class HttpExceptionsMiddleware implements MiddlewareInterface
      * When $throwable is a ResponseException this method will turn it into a
      * HTTP status code specific exception.
      *
-     * @param Throwable $throwable
-     * @param array $options
+     * @param  Throwable                   $throwable
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      *
      * @ThirdLast()
