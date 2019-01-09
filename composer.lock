@@ -933,22 +933,27 @@
         },
         {
             "name": "dflydev/markdown",
-            "version": "v1.0.0",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dflydev/dflydev-markdown.git",
-                "reference": "76501a808522dbe40a5a71d272bd08d54cbae03d"
+                "reference": "6baed9b50f29c980795b6656d43722aadb126f7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dflydev/dflydev-markdown/zipball/76501a808522dbe40a5a71d272bd08d54cbae03d",
-                "reference": "76501a808522dbe40a5a71d272bd08d54cbae03d",
+                "url": "https://api.github.com/repos/dflydev/dflydev-markdown/zipball/6baed9b50f29c980795b6656d43722aadb126f7e",
+                "reference": "6baed9b50f29c980795b6656d43722aadb126f7e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "dflydev\\markdown": "src"
@@ -956,7 +961,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "New BSD License"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -984,7 +989,7 @@
                 "markdown"
             ],
             "abandoned": "michelf/php-markdown",
-            "time": "2012-01-02T23:11:32+00:00"
+            "time": "2013-09-23T12:00:18+00:00"
         },
         {
             "name": "doctrine/instantiator",
