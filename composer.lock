@@ -101,16 +101,16 @@
         },
         {
             "name": "clue/buzz-react",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clue/php-buzz-react.git",
-                "reference": "693c96d35f0cd0e4f0e1a51b976433a91792eff9"
+                "reference": "a89735b0fc53d97d1b43e539c2555ef18d9b137e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-buzz-react/zipball/693c96d35f0cd0e4f0e1a51b976433a91792eff9",
-                "reference": "693c96d35f0cd0e4f0e1a51b976433a91792eff9",
+                "url": "https://api.github.com/repos/clue/php-buzz-react/zipball/a89735b0fc53d97d1b43e539c2555ef18d9b137e",
+                "reference": "a89735b0fc53d97d1b43e539c2555ef18d9b137e",
                 "shasum": ""
             },
             "require": {
@@ -126,7 +126,11 @@
             },
             "require-dev": {
                 "clue/block-react": "^1.0",
-                "phpunit/phpunit": "^4.5"
+                "clue/socks-react": "^0.6",
+                "phpunit/phpunit": "^4.5",
+                "react/http": "^0.7.2",
+                "react/promise-stream": "^0.1.1",
+                "react/socket": "^0.8"
             },
             "type": "library",
             "autoload": {
@@ -144,15 +148,16 @@
                     "email": "christian@lueck.tv"
                 }
             ],
-            "description": "Simple, async HTTP client for concurrently processing any number of HTTP requests, built on top of React PHP",
+            "description": "Simple, async PSR-7 HTTP client for concurrently processing any number of HTTP requests, built on top of ReactPHP",
             "homepage": "https://github.com/clue/php-buzz-react",
             "keywords": [
                 "async",
                 "http",
                 "http client",
+                "psr-7",
                 "reactphp"
             ],
-            "time": "2016-10-21T10:29:37+00:00"
+            "time": "2017-09-05T10:49:02+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -323,44 +328,71 @@
             "time": "2017-07-17T17:39:19+00:00"
         },
         {
-            "name": "guzzle/parser",
-            "version": "v2.8.0",
-            "target-dir": "Guzzle/Parser",
+            "name": "guzzlehttp/psr7",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Guzzle3/parser.git",
-                "reference": "368b8ad09d361ed3e967dc3e8f763526282c1fb4"
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "9f83dded91781a01c63574e387eaa769be769115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Guzzle3/parser/zipball/368b8ad09d361ed3e967dc3e8f763526282c1fb4",
-                "reference": "368b8ad09d361ed3e967dc3e8f763526282c1fb4",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
+                "reference": "9f83dded91781a01c63574e387eaa769be769115",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0",
+                "ralouphie/getallheaders": "^2.0.5"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
             },
             "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Guzzle\\Parser": ""
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
                 }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Interchangeable parsers used by Guzzle",
-            "homepage": "http://guzzlephp.org/",
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
             "keywords": [
-                "URI Template",
-                "cookie",
                 "http",
                 "message",
+                "psr-7",
+                "request",
+                "response",
+                "stream",
+                "uri",
                 "url"
             ],
-            "abandoned": "guzzle/guzzle",
-            "time": "2012-07-12T18:11:39+00:00"
+            "time": "2018-12-04T20:46:45+00:00"
         },
         {
             "name": "psr/http-message",
@@ -411,6 +443,46 @@
                 "response"
             ],
             "time": "2016-08-06T14:39:51+00:00"
+        },
+        {
+            "name": "ralouphie/getallheaders",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ralouphie/getallheaders.git",
+                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7.0",
+                "satooshi/php-coveralls": ">=1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/getallheaders.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Khattar",
+                    "email": "ralph.khattar@gmail.com"
+                }
+            ],
+            "description": "A polyfill for getallheaders.",
+            "time": "2016-02-11T07:05:27+00:00"
         },
         {
             "name": "react/cache",
@@ -533,34 +605,35 @@
         },
         {
             "name": "react/http-client",
-            "version": "v0.3.2",
-            "target-dir": "React/HttpClient",
+            "version": "v0.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/http-client.git",
-                "reference": "cefadf58ef506995971d48b48781a928367fc4f1"
+                "reference": "75ee8a113f156834aaabfe0055e8db531cb4892c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/http-client/zipball/cefadf58ef506995971d48b48781a928367fc4f1",
-                "reference": "cefadf58ef506995971d48b48781a928367fc4f1",
+                "url": "https://api.github.com/repos/reactphp/http-client/zipball/75ee8a113f156834aaabfe0055e8db531cb4892c",
+                "reference": "75ee8a113f156834aaabfe0055e8db531cb4892c",
                 "shasum": ""
             },
             "require": {
-                "guzzle/parser": "~2.8|~3.0",
-                "php": ">=5.3.3",
-                "react/dns": "^0.4 || ^0.3",
-                "react/socket-client": "^0.5 || ^0.4 || ^0.3"
+                "evenement/evenement": "~2.0",
+                "guzzlehttp/psr7": "^1.0",
+                "php": ">=5.4.0",
+                "react/dns": "0.4.*",
+                "react/event-loop": "0.4.*",
+                "react/promise": "~2.2",
+                "react/socket-client": "^0.5 || ^0.4 || ^0.3",
+                "react/stream": "0.4.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0 || ^4.8.10"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.3-dev"
-                }
-            },
             "autoload": {
-                "psr-0": {
-                    "React\\HttpClient": ""
+                "psr-4": {
+                    "React\\HttpClient\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -571,7 +644,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2016-03-24T09:17:48+00:00"
+            "time": "2017-03-20T09:55:48+00:00"
         },
         {
             "name": "react/promise",
@@ -620,6 +693,56 @@
             "time": "2019-01-07T21:25:54+00:00"
         },
         {
+            "name": "react/promise-timer",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/promise-timer.git",
+                "reference": "a3b8c28c3bd5fb866790f338d64ccfbdee44d124"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/a3b8c28c3bd5fb866790f338d64ccfbdee44d124",
+                "reference": "a3b8c28c3bd5fb866790f338d64ccfbdee44d124",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "react/event-loop": "~0.4.0|~0.3.0",
+                "react/promise": "~2.0|~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\Timer\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Trivial timeout implementation for Promises",
+            "homepage": "https://github.com/react/promise-timer",
+            "keywords": [
+                "async",
+                "event-loop",
+                "promise",
+                "reactphp",
+                "timeout",
+                "timer"
+            ],
+            "time": "2015-09-29T21:07:04+00:00"
+        },
+        {
             "name": "react/socket",
             "version": "v0.5.1",
             "source": {
@@ -663,27 +786,28 @@
         },
         {
             "name": "react/socket-client",
-            "version": "v0.5.0",
+            "version": "v0.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/socket-client.git",
-                "reference": "4ed32f2ce1e732586783c7ebd10b7d75386f2588"
+                "reference": "5570838d436f056695e9a5eaf01dd5f80386dd26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/socket-client/zipball/4ed32f2ce1e732586783c7ebd10b7d75386f2588",
-                "reference": "4ed32f2ce1e732586783c7ebd10b7d75386f2588",
+                "url": "https://api.github.com/repos/reactphp/socket-client/zipball/5570838d436f056695e9a5eaf01dd5f80386dd26",
+                "reference": "5570838d436f056695e9a5eaf01dd5f80386dd26",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "react/dns": "0.4.*|0.3.*",
                 "react/event-loop": "0.4.*|0.3.*",
-                "react/promise": "~2.0|~1.1",
-                "react/stream": "0.4.*|0.3.*"
+                "react/promise": "^2.1 || ^1.2",
+                "react/promise-timer": "~1.0",
+                "react/stream": "^0.4.5"
             },
             "require-dev": {
-                "clue/block-react": "~1.0"
+                "clue/block-react": "^1.1"
             },
             "type": "library",
             "autoload": {
@@ -700,7 +824,7 @@
                 "Socket"
             ],
             "abandoned": "react/socket",
-            "time": "2016-03-19T13:11:48+00:00"
+            "time": "2016-12-24T11:19:15+00:00"
         },
         {
             "name": "react/stream",
@@ -748,20 +872,20 @@
         },
         {
             "name": "ringcentral/psr7",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ringcentral/psr7.git",
-                "reference": "898bba9e2c787bb39743c8c2ab13920c0ab10b2d"
+                "reference": "dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ringcentral/psr7/zipball/898bba9e2c787bb39743c8c2ab13920c0ab10b2d",
-                "reference": "898bba9e2c787bb39743c8c2ab13920c0ab10b2d",
+                "url": "https://api.github.com/repos/ringcentral/psr7/zipball/dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
+                "reference": "dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.29",
+                "php": ">=5.3",
                 "psr/http-message": "~1.0"
             },
             "provide": {
@@ -802,7 +926,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2015-10-06T20:18:36+00:00"
+            "time": "2018-01-15T21:00:49+00:00"
         },
         {
             "name": "wyrihaximus/doctrine-annotation-autoloader",
@@ -877,7 +1001,7 @@
             ],
             "authors": [
                 {
-                    "name": "Cees-jan Kiewiet",
+                    "name": "Cees-Jan Kiewiet",
                     "email": "ceesjank@gmail.com"
                 }
             ],
@@ -1766,56 +1890,6 @@
                 "xunit"
             ],
             "time": "2017-02-02T10:36:38+00:00"
-        },
-        {
-            "name": "react/promise-timer",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/promise-timer.git",
-                "reference": "a3b8c28c3bd5fb866790f338d64ccfbdee44d124"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/a3b8c28c3bd5fb866790f338d64ccfbdee44d124",
-                "reference": "a3b8c28c3bd5fb866790f338d64ccfbdee44d124",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3",
-                "react/event-loop": "~0.4.0|~0.3.0",
-                "react/promise": "~2.0|~1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "React\\Promise\\Timer\\": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Lück",
-                    "email": "christian@lueck.tv"
-                }
-            ],
-            "description": "Trivial timeout implementation for Promises",
-            "homepage": "https://github.com/react/promise-timer",
-            "keywords": [
-                "async",
-                "event-loop",
-                "promise",
-                "reactphp",
-                "timeout",
-                "timer"
-            ],
-            "time": "2015-09-29T21:07:04+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
