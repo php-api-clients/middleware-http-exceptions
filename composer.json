@@ -9,7 +9,7 @@
     }
   ],
   "require": {
-    "php": "^7.0",
+    "php": "^7.2",
     "api-clients/middleware": "^4.0",
     "api-clients/psr7-http-status-exceptions": "^1.0",
     "clue/buzz-react": "^2.0 || ^1.1"
@@ -28,7 +28,10 @@
     }
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "platform": {
+      "php": "7.2"
+    }
   },
   "scripts": {
     "ensure-installed": "composer install --ansi -n -q",
